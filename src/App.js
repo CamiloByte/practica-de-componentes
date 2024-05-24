@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { MyComponent } from './compnents/MyComponent';
+import { SecondComponent } from './compnents/SecondComponent';
+import { ThirdComponent } from './compnents/ThirdComponent';
 
 function App() {
 
