@@ -1,14 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import { MyComponent } from './compnents/MyComponent';
-import { SecondComponent } from './compnents/SecondComponent';
-import { ThirdComponent } from './compnents/ThirdComponent';
+import { MyComponent } from './components/MyComponent';
+import { SecondComponent } from './components/SecondComponent';
+import { ThirdComponent } from './components/ThirdComponent';
+import { Child } from './components/Child';
+import { useState } from 'react';
+import { FourthComponent } from './components/FourthComponent';
 
 function App() {
 
+  const [name, setName] = useState("Lina");
+  const [message, setMessage] = useState("");
+
+  const addMessage = (message) => {
+    console.log(message);
+    setMessage(message);
+  }
+
   const medicalRecord = {
     height: "160",
-    bloodGroup:"Rh A+",
+    bloodGroup: "RhA+",
     allergies: "None"
   }
 
@@ -19,14 +30,21 @@ function App() {
         <p>
           Estructura inicial del proyecto y limpia.
         </p>
-        <MyComponent/>
-        <SecondComponent/>
-        <ThirdComponent 
-          name="Cristian"
+        <div>
+          <hr />
+          <FourthComponent />
+          <hr />
+        </div>
+        <h2>Mensaje del hijo: </h2>
+        <p>{ message }</p>
+        <Child name={name} setName={setName} addMessage={addMessage}/>
+        <SecondComponent />
+        <ThirdComponent
+          name="Cristian Camilo"
           lastName="Aranda"
           card={medicalRecord}
         />
-      
+        <MyComponent />
       </header>
     </div>
   );

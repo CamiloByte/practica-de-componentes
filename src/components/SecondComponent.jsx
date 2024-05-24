@@ -10,22 +10,19 @@ export const SecondComponent = () => {
         "Harry Potter y el misterio del príncipe",
         "Harry Potter y las Reliquias de la Muerte"
     ];
-
-    //const books = [];
-
-  return (
-    <div>
-        <h2>Listado de libros</h2>
-        <ul>
-            {
-                books.length >= 1 ?
-                (
-                        books.map((book, index) => {
-                            return <li key={index}>{book}</li>
-                        })
-                ) : "No existen libros."
-            }
-        </ul>
-    </div>
-  )
+    return (
+        <div>
+            <h2>Listado de libros</h2>
+            <ul>
+                {
+                    books.length >= 1 ?
+                    (
+                            books.map((book, index) => {
+                                return <li key={index}>{book}</li>
+                            })
+                    ) : "No existen libros."
+                }
+            </ul>
+        </div>
+)
 }
